@@ -29,5 +29,5 @@ esptool --chip esp8266 erase_flash
 ### Flash
 
 ```
-esptool --chip esp8266 --port <serial_port> write_flash --flash_mode dio --flash_size detect 0x0 <esp8266-X.bin>
+esptool --chip esp8266 --port COM10 write_flash --flash_mode dio --flash_size detect 0x0 firmware/esp8266-1m-20230426-v1.20.0.bin
 ```
