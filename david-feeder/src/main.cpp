@@ -1,19 +1,37 @@
 #include <Arduino.h>
 
+#include <Servo.h>
+
+Servo myservo;
+
+
+int buttonState = 0;
+int val = 0;
+
 void setup() {
   pinMode(D4, OUTPUT);
-  pinMode(D1, INPUT);
+  pinMode(D2, INPUT_PULLUP);
 
+  myservo.attach(D4);
+ 
 }
 
 void loop() { 
    
+   //buttonState = digitalRead(D2);
 
-  if(digitalRead(D1) == LOW){
-    digitalWrite(D4, HIGH); 
-  }else{  
-    digitalWrite(D4, LOW);
-  }
+  val = map(90, 0, 1023, 20, 120); 
+  myservo.write(val);              
+  delay(5);   
 
+  val = map(180, 0, 1023, 20, 120); 
+  myservo.write(val);              
+  delay(5);   
+
+   //if (buttonState == LOW) {
+ //   digitalWrite(D4, HIGH); 
+ // }else{  
+//    digitalWrite(D4, LOW);
+//  }
 
 }
